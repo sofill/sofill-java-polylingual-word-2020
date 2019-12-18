@@ -9,5 +9,7 @@ public class App {
     System.out.println("Sofill의 단어암기장에 오신 것을 환영합니다.");
     System.out.println("111");
     System.out.println("222");
+    System.out.println("333");
+    
   }
 }

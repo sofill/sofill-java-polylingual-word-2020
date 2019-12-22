@@ -3,11 +3,11 @@ package com.sofillpolylangmanager;
 import java.sql.Date;
 import java.util.Scanner;
 
-public class App2 {
+public class App1 {
   public static void main(String[] args) {
     Scanner keyboard = new Scanner(System.in);
 
-    class JapaneseWord {
+    class EnglishWord {
       int number;
       String word;
       String wordClass;
@@ -16,7 +16,7 @@ public class App2 {
     }
     
     final int SIZE = 500;
-    JapaneseWord[] arrJapanese = new JapaneseWord[SIZE]; // 레퍼런스 배열
+    EnglishWord[] arrEnglish = new EnglishWord[SIZE]; // 레퍼런스 배열
     
 
     System.out.println("=====영어 단어장=====");
@@ -24,7 +24,7 @@ public class App2 {
     int count = 0;
     for (int i = 0; i < SIZE; i++) {
       count++;
-      JapaneseWord temp = new JapaneseWord(); // 인스턴스 생성
+      EnglishWord temp = new EnglishWord(); // 인스턴스 생성
       
       System.out.print("번호를 입력하세요. :  ");
       temp.number = keyboard.nextInt();
@@ -42,7 +42,7 @@ public class App2 {
       System.out.print("예문을 입력해 주세요. : ");
       temp.example = keyboard.nextLine();
 
-      arrJapanese[i] = temp;
+      arrEnglish[i] = temp;
       
       System.out.println("계속 입력하시겠습니까? (Y/n) ");
       String response = keyboard.nextLine();
@@ -56,7 +56,7 @@ public class App2 {
 
 
     for (int i = 0; i < count; i++) {
-      System.out.printf("번호 : %d / 단어 : %s / 품사 : %s / 의미 : %s / 예문 : %s\n", arrJapanese[i].number, arrJapanese[i].word, arrJapanese[i].wordClass, arrJapanese[i].meaning, arrJapanese[i].example); 
+      System.out.printf("번호 : %d / 단어 : %s / 품사 : %s / 의미 : %s / 예문 : %s\n", arrEnglish[i].number, arrEnglish[i].word, arrEnglish[i].wordClass, arrEnglish[i].meaning, arrEnglish[i].example); 
     }
     keyboard.close();
   }

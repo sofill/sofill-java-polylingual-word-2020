@@ -7,43 +7,35 @@ public class App2 {
   public static void main(String[] args) {
     Scanner keyboard = new Scanner(System.in);
 
-    class JapaneseWord {
-      int number;
-      String word;
-      String wordClass;
-      String meaning;
-      String example;
-    }
-    
     final int SIZE = 500;
-    JapaneseWord[] arrJapanese = new JapaneseWord[SIZE]; // 레퍼런스 배열
-    
+    int[] number = new int[SIZE];
+    String[] word = new String[SIZE];
+    String[] wordClass = new String[SIZE];
+    String[] meaning = new String[SIZE];
+    String[] example = new String[SIZE];
 
-    System.out.println("=====영어 단어장=====");
+    System.out.println("=====일본어 단어장=====");
 
     int count = 0;
     for (int i = 0; i < SIZE; i++) {
       count++;
-      JapaneseWord temp = new JapaneseWord(); // 인스턴스 생성
-      
       System.out.print("번호를 입력하세요. :  ");
-      temp.number = keyboard.nextInt();
+      number[i] = keyboard.nextInt();
+
       keyboard.nextLine();
-      
+
       System.out.print("단어를 입력해 주세요. : ");
-      temp.word = keyboard.nextLine();
-      
+      word[i] = keyboard.nextLine();
+
       System.out.print("품사를 입력해 주세요. : ");
-      temp.wordClass = keyboard.nextLine();
+      wordClass[i] = keyboard.nextLine();
 
       System.out.print("의미를 입력해 주세요. : ");
-      temp.meaning = keyboard.nextLine();
+      meaning[i] = keyboard.nextLine();
 
       System.out.print("예문을 입력해 주세요. : ");
-      temp.example = keyboard.nextLine();
+      example[i] = keyboard.nextLine();
 
-      arrJapanese[i] = temp;
-      
       System.out.println("계속 입력하시겠습니까? (Y/n) ");
       String response = keyboard.nextLine();
       if (!response.equalsIgnoreCase("y"))
@@ -55,9 +47,9 @@ public class App2 {
     System.out.println("저장일 : " + today);
 
 
-    for (int i = 0; i < count; i++) {
-      System.out.printf("번호 : %d / 단어 : %s / 품사 : %s / 의미 : %s / 예문 : %s\n", arrJapanese[i].number, arrJapanese[i].word, arrJapanese[i].wordClass, arrJapanese[i].meaning, arrJapanese[i].example); 
+      for (int i = 0; i < count; i++) {
+        System.out.printf("번호 : %d / 단어 : %s / 품사 : %s / 의미 : %s / 예문 : %s\n", number[i], word[i], wordClass[i], meaning[i], example[i]); 
+      }
+      keyboard.close();
     }
-    keyboard.close();
   }
-}

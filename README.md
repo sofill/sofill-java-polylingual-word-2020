@@ -1,4 +1,4 @@
-# sofill-poly-lang-manager
-Title : 회원제 다개국어 단어암기 매니저
+# sofill-movie-lang
+Title : 영화와 드라마 속 명대사, 내가 몰랐던 단어 모음
 
 This is my first Project.

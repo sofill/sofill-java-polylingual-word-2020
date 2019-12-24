@@ -14,7 +14,6 @@ public class App {
     // 내가 설정한 3개의 메서드를 사용하기 전에
     // 그 메서드가 작업시 사용할 키보드 객체를 설정해 줘야 한다.
     MovieHandler.keyboard = keyboard;
-    MovieHandler2.keyboard = keyboard;
     WordHandler.keyboard = keyboard;
     MemberHandler.keyboard = keyboard;
 

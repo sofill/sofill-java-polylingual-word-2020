@@ -38,3 +38,4 @@ dependencies {
 application {
     mainClassName = 'com.sofill-movie-lang.App'
 }
+}

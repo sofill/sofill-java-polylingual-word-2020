@@ -1,5 +1,7 @@
 package com.sofillmovielang.domain;
 
+import java.sql.Date;
+
 public class MovieNTv {
   
     private String title;
@@ -67,6 +69,5 @@ public class MovieNTv {
     public void setReview(String review) {
       this.review = review;
     }
->>>>>>> cb35712589cbb6293c097009edd8c84b1a948264
     
   }

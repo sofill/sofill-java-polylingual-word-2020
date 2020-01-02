@@ -7,6 +7,7 @@
 
 ## 실습 소스 및 결과
 
+<<<<<<< HEAD
 - src/main/java/com/eomcs/lms/domain/MovieNTv.java 변경
 - src/main/java/com/eomcs/lms/domain/Member.java 변경
 - src/main/java/com/eomcs/lms/domain/word.java 변경
@@ -22,6 +23,23 @@
     - 인스턴스 변수(필드)를 비공개(private)로 전환한다.
     - 값을 설정하고 리턴해주는 세터/게터를 정의한다.
 - MovieHandler.java
+=======
+- src/main/java/com/eomcs/lms/domain/Lesson.java 변경
+- src/main/java/com/eomcs/lms/domain/Member.java 변경
+- src/main/java/com/eomcs/lms/domain/Board.java 변경
+- src/main/java/com/eomcs/lms/handler/LessonHandler.java 변경
+- src/main/java/com/eomcs/lms/handler/MemberHandler.java 변경
+- src/main/java/com/eomcs/lms/handler/BoardHandler.java 변경
+
+## 실습
+
+### 작업1) Lesson 인스턴스의 값을 다룰 연산자를 정의하라.
+
+- Lesson.java
+    - 인스턴스 변수(필드)를 비공개(private)로 전환한다.
+    - 값을 설정하고 리턴해주는 세터/게터를 정의한다.
+- LessonHandler.java
+>>>>>>> cb35712589cbb6293c097009edd8c84b1a948264
     - Lesson 인스턴스에 값을 넣고 꺼낼 때 세터/겟터를 사용한다.
 
 ### 작업2) Member 인스턴스의 값을 다룰 연산자를 정의하라.

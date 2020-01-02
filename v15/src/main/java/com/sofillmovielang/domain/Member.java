@@ -9,7 +9,7 @@ public class Member {
    private String password2;
    private String address;
    private String phoneNumber;
-
+   
    
   public String getId() {
     return id;
@@ -53,6 +53,5 @@ public class Member {
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
->>>>>>> cb35712589cbb6293c097009edd8c84b1a948264
    
 }

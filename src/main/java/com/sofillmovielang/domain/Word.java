@@ -2,14 +2,14 @@ package com.sofillmovielang.domain;
 
 public class Word {
 
-  public String title;
-  public String lang;
-  public String word;
-  public String wordClass;
-  public String meaning;
-  public String quote;
-  public String translation;
-  public String memo;
+  private String title;
+  private String lang;
+  private String word;
+  private String wordClass;
+  private String meaning;
+  private String quote;
+  private String translation;
+  private String memo;
 
 }
 

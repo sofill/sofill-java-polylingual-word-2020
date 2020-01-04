@@ -2,7 +2,7 @@ package com.sofillmovielang.domain;
 
 import java.sql.Date;
 
-public class MovieNTv {
+public class Movie {
   
     public String title;
     public String category; // (1.movie 2.tv-show;

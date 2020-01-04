@@ -22,7 +22,7 @@ public class MemberHandler {
   
   public void addMember() { //여기도  public으로..
 
-    System.out.println("=====백업을 위한 멤버 등록=====");
+    System.out.println("=====회원 등록=====");
     System.out.println();
     for (int i = 0; i < MEMBER_SIZE; i++) {
 

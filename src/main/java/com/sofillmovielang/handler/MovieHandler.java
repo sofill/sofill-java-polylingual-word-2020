@@ -2,31 +2,33 @@ package com.sofillmovielang.handler;
 
 import java.sql.Date;
 import java.util.Scanner;
-import com.sofillmovielang.domain.MovieNTv;;
+import com.sofillmovielang.domain.Movie;;
 
 public class MovieHandler {
-
-  static final int MOVIENTV_SIZE = 500;
-
-  MovieNTv[] arrMovies; // 생성자로 뒷부분 이동
-  int movieNTv_count = 0;
-
+  
+  //필드
   Scanner input; // 이제는 public일 필요가 없다. 생성자에서만 사용.
+  MovieList movieList;
 
   //생성자
   public MovieHandler(Scanner input) {
     this.input = input; //초기화
-    this.arrMovies = new MovieNTv[MOVIENTV_SIZE];
+    this.movieList = new MovieList(); //생성자호출 ㅠㅠ
   } //생성자 : 생성자를 넣음으로써 꼭 필요한 기능을 강제로 수행하도록 한다.
     //예를 들어 키보드 사용 같은 것.
+  
+  public MovieHandler(Scanner input, int size) {
+    this.input = input; //초기화
+    this.movieList = new MovieList(size); //생성자호출 ㅠㅠ
+  }
 
   public void addMovie() {
 
     System.out.println("=====나의 해외명작 컬렉션=====");
     System.out.println();
-    for (int i = 0; i < MOVIENTV_SIZE; i++) {
-
-      MovieNTv temp = new MovieNTv(); // 인스턴스 생성
+    
+    for (int i = 0; i < movieList.MOVIE_SIZE; i++) {
+      Movie temp = new Movie();
       System.out.print("1.제목: ");
       temp.setTitle(input.nextLine());
       System.out.print("2.개봉일: ");
@@ -49,9 +51,10 @@ public class MovieHandler {
       System.out.println();
 
       // 무비 정보를 담고 있는 인스턴스의 주소를 나중에 사용할 수 있도록
-      // 레퍼런스 배열에 보관해 둔다. 
-      this.arrMovies[this.movieNTv_count++] = temp;
+      // 레퍼런스 배열에 보관해 둔다. // MovieList의 add 메서드
+      movieList.add(temp);
 
+      
       System.out.print("계속 입력하시겠습니까? (Y/n) ");
       String response = input.nextLine();
       System.out.println();
@@ -65,8 +68,8 @@ public class MovieHandler {
     System.out.println("저장하였습니다.");
   }
   public void listMovie() {
-    for (int i = 0; i < this.movieNTv_count; i++) {
-      MovieNTv temp = this.arrMovies[i];
+    for (int i = 0; i < movieList.size; i++) {
+    Movie temp = movieList.toArray()[i];
       System.out.println("================================= ");
       System.out.println();
       System.out.printf("1.제목 - %s\n", temp.getTitle());
@@ -93,10 +96,10 @@ public class MovieHandler {
       case "1" :  
         System.out.println("제목을 입력하세요.");
         String title = input.nextLine();
-        MovieNTv m = null;    
-        for (int i = 0; i < this.movieNTv_count; i++) {
-          if (this.arrMovies[i].getTitle().equals(title)) {
-            m = this.arrMovies[i];
+        Movie m = null;    
+        for (int i = 0; i < movieList.size; i++) {
+          if (movieList.toArray()[i].getTitle().equals(title)) {
+            m = movieList.toArray()[i];
             break;
           }
         }
@@ -126,10 +129,10 @@ public class MovieHandler {
       case "2": 
         System.out.println("카테고리를 입력하세요.");
         String category = input.nextLine();
-        MovieNTv m2 = null;    
-        for (int i = 0; i < this.movieNTv_count; i++) {
-          if (this.arrMovies[i].getCategory().equals(category)) {
-            m2 = this.arrMovies[i];
+        Movie m2 = null;    
+        for (int i = 0; i < movieList.size; i++) {
+          if (movieList.toArray()[i].getCategory().equals(category)) {
+            m2 = movieList.toArray()[i];
             System.out.println();
             System.out.printf("제목 - %s\n", m2.getTitle());
           }
@@ -145,10 +148,10 @@ public class MovieHandler {
       case "3": 
         System.out.println("장르를 입력하세요.");
         String genre = input.nextLine();
-        MovieNTv m3 = null;    
-        for (int i = 0; i < this.movieNTv_count; i++) {
-          if (this.arrMovies[i].getGenre().equals(genre)) {
-            m3 = this.arrMovies[i];
+        Movie m3 = null;    
+        for (int i = 0; i < movieList.size; i++) {
+          if (movieList.toArray()[i].getGenre().equals(genre)) {
+            m3 = movieList.toArray()[i];
             System.out.println();
             System.out.printf("제목 - %s\n", m3.getTitle());
           }
@@ -164,10 +167,10 @@ public class MovieHandler {
       case "4": 
         System.out.println("배우 이름을 입력하세요.");
         String stars = input.nextLine();
-        MovieNTv m4 = null;    
-        for (int i = 0; i < this.movieNTv_count; i++) {
-          if (this.arrMovies[i].getStars().equals(stars)) {
-            m4 = this.arrMovies[i];
+        Movie m4 = null;    
+        for (int i = 0; i < movieList.size; i++) {
+          if (movieList.toArray()[i].getStars().equals(stars)) {
+            m4 = movieList.toArray()[i];
             System.out.println();
             System.out.printf("제목 - %s\n", m4.getTitle());
           }

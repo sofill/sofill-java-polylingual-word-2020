@@ -1,15 +1,15 @@
 package com.sofillmovielang.domain;
 
-public class MovieNTv {
+public class Movie {
   
     private String title;
+    private String releaseDay;
+    private float myRating;
     private String category; // (1.movie 2.tv-show;
     private String genre; // (1.mystery 2.thriller 3.romance 4.drama 5.crime 6.fanatasy 7.animation)
     private String director;
-    private String stars; 
     private String writer;
-    private String releaseDay;
-    private float myRating;
+    private String stars; 
     private String review;
     
     
@@ -67,6 +67,5 @@ public class MovieNTv {
     public void setReview(String review) {
       this.review = review;
     }
->>>>>>> cb35712589cbb6293c097009edd8c84b1a948264
     
   }

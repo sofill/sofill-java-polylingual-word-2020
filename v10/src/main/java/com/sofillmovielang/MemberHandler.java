@@ -20,7 +20,7 @@ public class MemberHandler {
   
   static void addMember() {
 
-    System.out.println("=====백업을 위한 멤버 등록=====");
+    System.out.println("=====회원 등록=====");
     System.out.println();
     for (int i = 0; i < MEMBER_SIZE; i++) {
       member_count++;

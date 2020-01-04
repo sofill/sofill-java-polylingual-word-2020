@@ -16,7 +16,7 @@ public class WordHandler {
   public WordHandler(Scanner input) {
     this.input = input; //초기화
     this.arrWord = new Word[WORD_SIZE];
-  } //생성자
+  } 
 
   public void addWord() {
     System.out.println("=====영화 속 몰랐던 단어=====");

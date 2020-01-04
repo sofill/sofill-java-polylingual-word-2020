@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class MovieHandler {
 
-  static class MovieNTv {
+  static class Movie {
     String title;
     String category; // (1.movie 2.tv-show;
     String genre; // (1.mystery 2.thriller 3.romance 4.drama 5.crime 6.fanatasy 7.animation)
@@ -16,17 +16,17 @@ public class MovieHandler {
     float myRating;
     String review;
   }
-  static final int MOVIENTV_SIZE = 500;
-  static MovieNTv[] arrMovies = new MovieNTv[MOVIENTV_SIZE]; // 레퍼런스 배열
-  static int movieNTv_count = 0;
+  static final int MOVIE_SIZE = 500;
+  static Movie[] arrMovies = new Movie[MOVIE_SIZE]; // 레퍼런스 배열
+  static int movie_count = 0;
   static Scanner keyboard;
   
   static void addMovie() {
     System.out.println("=====나의 해외명작 컬렉션=====");
     System.out.println();
-    for (int i = 0; i < MOVIENTV_SIZE; i++) {
-      movieNTv_count++;
-      MovieNTv temp = new MovieNTv(); // 인스턴스 생성
+    for (int i = 0; i < MOVIE_SIZE; i++) {
+      movie_count++;
+      Movie temp = new Movie(); // 인스턴스 생성
 
       System.out.print("1.제목: ");
       temp.title = keyboard.nextLine();
@@ -69,7 +69,7 @@ public class MovieHandler {
     }
   }
   static void listMovie() {
-    for (int i = 0; i < movieNTv_count; i++) {
+    for (int i = 0; i < movie_count; i++) {
       System.out.println("================================= ");
       System.out.println();
       System.out.printf("1.제목 - %s\n", arrMovies[i].title);

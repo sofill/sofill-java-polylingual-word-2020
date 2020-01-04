@@ -11,7 +11,7 @@ public class App {
 
   public static void main(String[] args) {
 
-    MovieHandler 조회 = new MovieHandler(keyboard);
+    MovieHandler 조회 = new MovieHandler(keyboard, 10000);
     WordHandler 단어정리 = new WordHandler(keyboard);
     MemberHandler 회원가입 = new MemberHandler(keyboard);
     //

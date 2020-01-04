@@ -6,10 +6,10 @@
 
 ## 실습 소스 및 결과
 
-- src/main/java/com/eomcs/lms/App.java 변경
-- src/main/java/com/eomcs/lms/App2.java 추가
-- src/main/java/com/eomcs/lms/App3.java 추가
-- src/test/java/com/eomcs/lms/AppTest.java 삭제
+- src/main/java/com/sofillmovielang/App.java 변경
+- src/main/java/com/sofillmovielang/App2.java 추가
+- src/main/java/com/sofillmovielang/App3.java 추가
+- src/test/java/com/sofillmovielang/AppTest.java 삭제
 
 ## 실습
 
@@ -55,5 +55,5 @@ App3.java 실행 결과
 ### 작업4) AppTest 클래스를 삭제하라.
 
 ```
-src/test/java/com/eomcs/lms/AppTest.java 삭제
+src/test/java/com/sofillmovielang/AppTest.java 삭제
 ```

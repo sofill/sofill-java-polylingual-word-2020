@@ -53,6 +53,5 @@ public class Member {
   public void setPhoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
->>>>>>> cb35712589cbb6293c097009edd8c84b1a948264
    
 }

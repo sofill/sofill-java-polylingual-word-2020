@@ -7,7 +7,7 @@ public class App1 {
   // 메인 바깥으로 보낼 때 static 붙이는 이유 : 다른 메서드들과 공유하기 위한 표시
   static Scanner keyboard = new Scanner(System.in);
 
-  static class MovieNTv {
+  static class Movie {
     String title;
     String category; // (1.movie 2.tv-show;
     String genre; // (1.mystery 2.thriller 3.romance 4.drama 5.crime 6.fanatasy 7.animation)
@@ -19,7 +19,7 @@ public class App1 {
     String review;
   }
   static final int MOVIENTV_SIZE = 500;
-  static MovieNTv[] arrMovies = new MovieNTv[MOVIENTV_SIZE]; // 레퍼런스 배열
+  static Movie[] arrMovies = new Movie[MOVIENTV_SIZE]; // 레퍼런스 배열
   static int movieNTv_count = 0;
 
 
@@ -107,7 +107,7 @@ public class App1 {
     System.out.println();
     for (int i = 0; i < MOVIENTV_SIZE; i++) {
       movieNTv_count++;
-      MovieNTv temp = new MovieNTv(); // 인스턴스 생성
+      Movie temp = new Movie(); // 인스턴스 생성
 
       System.out.print("1.제목: ");
       temp.title = keyboard.nextLine();

@@ -60,7 +60,6 @@ public class Word {
   public void setMemo(String memo) {
     this.memo = memo;
   }
-  >>>>>>> cb35712589cbb6293c097009edd8c84b1a948264
 
 }
 

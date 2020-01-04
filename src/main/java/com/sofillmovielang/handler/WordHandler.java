@@ -6,16 +6,15 @@ import com.sofillmovielang.domain.Word;
 
 public class WordHandler {
 
-  Word[] arrWord; // 생성자로 뒷부분 이동
-  int word_count = 0;
 
-  static final int WORD_SIZE = 500;
+
+
   Scanner input; // 이제는 public일 필요가 없다. 생성자에서만 사용.
 
   //생성자
   public WordHandler(Scanner input) {
     this.input = input; //초기화
-    this.arrWord = new Word[WORD_SIZE];
+    this.list = new Word[WORD_SIZE];
   } //생성자
 
   public void addWord() {

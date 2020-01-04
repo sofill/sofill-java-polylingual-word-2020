@@ -14,7 +14,7 @@ public class App {
     MovieHandler 조회 = new MovieHandler(keyboard);
     WordHandler 단어정리 = new WordHandler(keyboard);
     MemberHandler 회원가입 = new MemberHandler(keyboard);
-    //
+    
     String command;
     do {
       System.out.print("―――――――― 나의 해외명작 컬렉션으로 외국어 공부하기  ――――――――\n"

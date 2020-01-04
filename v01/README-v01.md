@@ -32,22 +32,22 @@ gradlew.bat
 로컬 Git 저장소에 자바 프로젝트 폴더를 생성한다.
 
 ```
-[~/git/eomcs-study]$ mkdir java-project
-[~/git/eomcs-study]$ cd eomcs-java-project
+[~/git]$ mkdir sofill-movie-lang
+[~/git]$ cd sofill-movie-lang
 ```
 
 프로젝트 폴더를 자바 애플리케이션 프로젝트로 초기화시킨다.
 ```
-[~/git/eomcs-study/eomcs-java-project]$ gradle init
+[~/git/sofill-movie-lang]$ gradle init
 ```
 
 자바 소스 파일 외의 기타 파일을 보관할 디렉토리 생성
 
 ```
-[~/git/eomcs-study/eomcs-java-project]$ cd src/main
-[~/git/eomcs-study/eomcs-java-project/src/main]$ mkdir resources
-[~/git/eomcs-study/eomcs-java-project/src/main]$ cd ../test
-[~/git/eomcs-study/eomcs-java-project/src/test]$ mkdir resources
+[~/git/sofill-movie-lang]$ cd src/main
+[~/git/sofill-movie-lang/src/main]$ mkdir resources
+[~/git/sofill-movie-lang/src/main]$ cd ../test
+[~/git/sofill-movie-lang/src/test]$ mkdir resources
 ```
 
 ### 작업2) '그레이들'의 빌드 스크립트 파일을 편집하라.
@@ -65,11 +65,11 @@ tasks.withType(JavaCompile) {
 ### 작업3) 프로젝트를 빌드하라.
 
 ```
-[~/git/eomcs-study/eomcs-java-project]$ gradle build
+[~/git/sofill-movie-lang]$ gradle build
 ```
 
 ### 작업4) 프로젝트를 실행하라.
 
 ```
-[~/git/eomcs-study/eomcs-java-project]$ gradle run
+[~/git/sofill-movie-lang]$ gradle run
 ```

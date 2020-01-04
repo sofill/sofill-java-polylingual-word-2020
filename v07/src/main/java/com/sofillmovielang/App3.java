@@ -20,7 +20,7 @@ public class App3 {
     final int SIZE = 500;
     Member[]  arrMember = new Member[SIZE];
 
-    System.out.println("=====백업을 위한 멤버 등록=====");
+    System.out.println("=====회원 등록=====");
 
     int count = 0;
     for (int i = 0; i < SIZE; i++) {

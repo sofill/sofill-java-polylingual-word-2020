@@ -14,14 +14,13 @@ public class App {
     MovieHandler 조회 = new MovieHandler(keyboard);
     WordHandler 단어정리 = new WordHandler(keyboard);
     MemberHandler 회원가입 = new MemberHandler(keyboard);
-    //
+    
     String command;
     do {
       System.out.print("\n명령> ");
       command = keyboard.nextLine();
       System.out.println();
-      System.out.println(
-          );
+      System.out.println();
 
       switch (command){
         case "1": 조회.addMovie();

@@ -28,7 +28,9 @@ public class MovieHandler {
     System.out.println();
     
     for (int i = 0; i < movieList.MOVIE_SIZE; i++) {
+      
       Movie temp = new Movie();
+      
       System.out.print("1.제목: ");
       temp.setTitle(input.nextLine());
       System.out.print("2.개봉일: ");

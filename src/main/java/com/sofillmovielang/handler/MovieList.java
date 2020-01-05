@@ -40,7 +40,7 @@ public class MovieList { //배열만 따로 다루려고 만드는 클래스
   // 영화 데이터를 저장
   public void add(Movie temp) {
     if (this.size == this.list.length) {
-      // 현재 배열에 게시글 객체가 꽉 찼으면 배열을 늘려 준다.
+      // 현재 배열에 객체가 꽉 찼을 때 배열을 늘려주는 기능
       int oldCapacity = this.size;
       int newCapacity = oldCapacity + (oldCapacity >> 1);
       this.list = Arrays.copyOf(this.list, newCapacity);

@@ -32,7 +32,18 @@ public class WordList {
     }
     return arr;
     }
-    */
+     */
     return Arrays.copyOf(this.list, this.size);
   }
-}  
+
+  // 단어 데이터를 저장
+  public void add(Word temp) {
+    if (this.size == this.list.length) {
+      // 현재 배열에 객체가 꽉 찼을 때 배열을 늘려주는 기능
+      int oldCapacity = this.size;
+      int newCapacity = oldCapacity + (oldCapacity >> 1);
+      this.list = Arrays.copyOf(this.list, newCapacity);
+    }
+    this.list[this.size++] = temp;
+  }
+s}  

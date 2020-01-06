@@ -1,32 +1,32 @@
 package com.sofillmovielang.handler;
 
 import java.util.Arrays;
-import com.sofillmovielang.domain.Word;
+import com.sofillmovielang.domain.Movie;
 
-public class WordList {
+public class MovieList { //배열만 따로 다루려고 만드는 클래스
 
   ///필드///
-  static final int WORD_SIZE = 500;
-  Word[] list; 
+  static final int MOVIE_SIZE = 100;
+  Movie[] list; 
   int size = 0;
 
   ///생성자///
-  public WordList() {
-    this.list = new Word[WORD_SIZE];    
+  public MovieList() {
+    this.list = new Movie[MOVIE_SIZE];
   }
 
-  public WordList(int capacity) {
-    if (capacity > WORD_SIZE && capacity <= 50000) {
-      this.list = new Word[capacity];
+  public MovieList(int capacity) {
+    if (capacity > MOVIE_SIZE && capacity <= 10000) {
+      this.list = new Movie[capacity];
     } else {
-      this.list = new Word[WORD_SIZE];
+      this.list = new Movie[MOVIE_SIZE];
     }
   }
 
   ///메서드///
-  public Word[] toArray() {
+  public Movie[] toArray() {
     /*
-    Word[] arr = new Word[this.size];
+    Movie[] arr = new Movie[this.size];
     for (int i = 0; i < this.size; i++) {
       arr[i] = this.list[i];
     }
@@ -34,16 +34,19 @@ public class WordList {
     }
      */
     return Arrays.copyOf(this.list, this.size);
-  }
 
-  ///단어 데이터를 저장///
-  public void add(Word temp) {
+  }
+  
+  // 영화 데이터를 저장
+  public void add(Movie temp) {
     if (this.size == this.list.length) {
       // 현재 배열에 객체가 꽉 찼을 때 배열을 늘려주는 기능
       int oldCapacity = this.size;
       int newCapacity = oldCapacity + (oldCapacity >> 1);
       this.list = Arrays.copyOf(this.list, newCapacity);
     }
+    
     this.list[this.size++] = temp;
+    
   }
-}  
+}

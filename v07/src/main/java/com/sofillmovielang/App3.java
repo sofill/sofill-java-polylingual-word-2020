@@ -18,7 +18,7 @@ public class App3 {
     }
 
     final int SIZE = 500;
-    Member[]  arrMember = new Member[SIZE];
+    Member[] arrMember = new Member[SIZE];
 
     System.out.println("=====회원 등록=====");
 
@@ -70,11 +70,11 @@ public class App3 {
       System.out.printf("7.연락처 - %s\n", arrMember[i].phoneNumber);
       System.out.println();
     }
-    keyboard.close();
     System.out.println("================================= ");
     Date today = new Date(System.currentTimeMillis());
     System.out.println("                저장일 : " + today);
     System.out.println();
 
+    keyboard.close();
   }
 }

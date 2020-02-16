@@ -18,8 +18,8 @@
 
 - MovieHandler.java
     - 수업 관리와 관련된 메서드를 담을 클래스를 만든다.
-    - `App1.java` 에서 영화 관리와 관련된 변수와 메서드를 `MovieHandler` 클래스로 옮긴다.
-- App1.java 
+    - `App.java` 에서 영화 관리와 관련된 변수와 메서드를 `MovieHandler` 클래스로 옮긴다.
+- App.java 
     - `MovieHandler` 클래스 사용한다.
 
 
@@ -27,15 +27,17 @@
 
 - WordHandler.java
     - 단어 관리와 관련된 메서드를 담을 클래스를 만든다.
-    - `App1.java` 에서 단어 관리와 관련된 변수와 메서드를 `WordHandler` 클래스로 옮긴다.
-- App1.java 
-    - `WordHandler` 클래스 사용한다.
+    - `App.java` 에서 단어 관리와 관련된 변수와 메서드를 `WordHandler` 클래스로 옮긴다.
+- App.java 
+    - `WordHandler` 클래스 사용한다. 
 
 
 ### 작업3) 회원 데이터 처리와 관련된 메서드를 별도의 클래스로 분리하라.
 
 - MemberHandler.java
     - 게시물 관리와 관련된 메서드를 담을 클래스를 만든다.
-    - `App1.java` 에서 게시물관리와 관련된 변수와 메서드를 `MemberHandler` 클래스로 옮긴다.
-- App1.java
+    - `App.java` 에서 게시물관리와 관련된 변수와 메서드를 `MemberHandler` 클래스로 옮긴다.
+- App.java
     - `MemberHandler` 클래스 사용한다.
+    
+    

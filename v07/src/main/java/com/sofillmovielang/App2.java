@@ -26,34 +26,36 @@ public class App2 {
 
     int count = 0;
     for (int i = 0; i < SIZE; i++) {
+      
       count++;
-      Word temp = new Word(); // 인스턴스 생성
+      
+      Word word = new Word(); // 인스턴스 생성
 
       System.out.print("제목: ");
-      temp.title = keyboard.nextLine();
+      word.title = keyboard.nextLine();
 
       System.out.print("언어: ");
-      temp.lang = keyboard.nextLine();
+      word.lang = keyboard.nextLine();
 
       System.out.print("단어: ");
-      temp.word = keyboard.nextLine();
+      word.word = keyboard.nextLine();
 
       System.out.print("의미: ");
-      temp.meaning = keyboard.nextLine();
+      word.meaning = keyboard.nextLine();
 
       System.out.print("품사: ");
-      temp.wordClass = keyboard.nextLine();
+      word.wordClass = keyboard.nextLine();
 
       System.out.print("인용: ");
-      temp.quote = keyboard.nextLine();
+      word.quote = keyboard.nextLine();
 
       System.out.print("번역: ");
-      temp.translation = keyboard.nextLine();
+      word.translation = keyboard.nextLine();
 
       System.out.print("메모: ");
-      temp.memo = keyboard.nextLine();
+      word.memo = keyboard.nextLine();
 
-      arrWord[i] = temp;
+      arrWord[i] = word;
 
       System.out.print("계속 입력하시겠습니까? (Y/n) ");
       String response = keyboard.nextLine();
@@ -76,11 +78,11 @@ public class App2 {
       System.out.printf("8.메모 - %s\n", arrWord[i].memo); 
       System.out.println();
     }
-    keyboard.close();
     System.out.println("================================= ");
     Date today = new Date(System.currentTimeMillis());
     System.out.println("                저장일 : " + today);
     System.out.println();
 
+    keyboard.close();
   }
 }

@@ -6,14 +6,14 @@
 
 ## 실습 소스 및 결과
 
-- com.eomcs.lms.handler 패키지 추가
-- src/main/java/com/sofillmovielang/handler/LessonHandler.java 변경
+- com.sofillmovielang.handler 패키지 추가
+- src/main/java/com/sofillmovielang/handler/MovieHandler.java 변경
+- src/main/java/com/sofillmovielang/handler/WordHandler.java 변경
 - src/main/java/com/sofillmovielang/handler/MemberHandler.java 변경
-- src/main/java/com/sofillmovielang/handler/BoardHandler.java 변경
-- com.eomcs.lms.domain 패키지 추가
-- src/main/java/com/sofillmovielang/domain/Lesson.java 변경
+- com.sofillmovielang.domain 패키지 추가
+- src/main/java/com/sofillmovielang/domain/Movie.java 변경
+- src/main/java/com/sofillmovielang/domain/Word.java 변경
 - src/main/java/com/sofillmovielang/domain/Member.java 변경
-- src/main/java/com/sofillmovielang/domain/Board.java 변경
 - src/main/java/com/sofillmovielang/App.java 변경
 
 ## 실습
@@ -23,7 +23,7 @@
 - 도메인 패키지 생성
     - `com.sofillmovielang.domain` 패키지 생성
 - 도메인 클래스를 `domain` 패키지로 이동
-    - `Movie`, `Word`, `Member` 클래스를 `com.sofillmovielang.domain` 패키지로 옮긴다.
+    - `Movie`, `Word`, `Member` 클래스를 생성하여 각 핸들러에 있는 도메인 클래스를 `com.sofillmovielang.domain` 패키지로 옮긴다.
     - 다른 패키지에서 변수에 접근할 수 있도록 접근 제어를 `public` 으로 변경
 - 핸들러 클래스에 import 문 추가
     - `MovieHandler`, `WordHandler`, `MemberHandler` 클래스를 변경한다.

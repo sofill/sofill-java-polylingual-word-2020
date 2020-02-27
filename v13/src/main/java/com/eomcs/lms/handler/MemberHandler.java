@@ -7,17 +7,12 @@ import com.eomcs.lms.domain.Member;
 public class MemberHandler {
 
   // 인스턴스 필드 = 논스태틱 필드
-  Member[] members;
+  Member[] members = new Member[MEMBER_SIZE];
   int memberCount = 0;
 
   // 클래스 필드 = 스태틱 필드
   static final int MEMBER_SIZE = 1000;
-  Scanner input; // 이제는 public일 필요가 없다. 생성자에서만 사용.
-
-  public MemberHandler(Scanner input) {
-    this.input = input;
-    this.members = new Member[MEMBER_SIZE];
-  }
+  public static Scanner keyboard;
 
   // 인스턴스 메서드
   // => 호출할 때는 반드시 인스턴스 주소를 줘야 한다.
@@ -27,23 +22,23 @@ public class MemberHandler {
     Member member = new Member();
 
     System.out.print("번호? ");
-    member.no = input.nextInt();
-    input.nextLine(); // 줄바꿈 기호 제거용
+    member.no = keyboard.nextInt();
+    keyboard.nextLine(); // 줄바꿈 기호 제거용
 
     System.out.print("이름? ");
-    member.name = input.nextLine();
+    member.name = keyboard.nextLine();
 
     System.out.print("이메일? ");
-    member.email = input.nextLine();
+    member.email = keyboard.nextLine();
 
     System.out.print("암호? ");
-    member.password = input.nextLine();
+    member.password = keyboard.nextLine();
 
     System.out.print("사진? ");
-    member.photo = input.nextLine();
+    member.photo = keyboard.nextLine();
 
     System.out.print("연락처? ");
-    member.tel = input.nextLine();
+    member.tel = keyboard.nextLine();
 
     member.registeredDate = new Date(System.currentTimeMillis());
 
@@ -63,8 +58,8 @@ public class MemberHandler {
 
   public void detailMember() {
     System.out.print("회원 번호? ");
-    int no = input.nextInt();
-    input.nextLine(); // 숫자 뒤에 남은 공백 제거
+    int no = keyboard.nextInt();
+    keyboard.nextLine(); // 숫자 뒤에 남은 공백 제거
 
     Member member = null; // 회원 인덱스번호 말고 회원 번호로 출력할 수 있도록 바꾸는 것
     for (int i = 0; i < this.memberCount; i++) {

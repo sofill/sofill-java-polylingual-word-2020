@@ -27,23 +27,23 @@ public class App {
       System.out.println();
 
       switch (command) {
-        case "1": 영화.addMovie();
+        case "/movie/add": 영화.addMovie();
         break;
-        case "2": 영화.listMovie();
+        case "/movie/list": 영화.listMovie();
         break;
-        case "3": 영화.detailMovie();
+        case "/movie/detail": 영화.detailMovie();
         break;
-        case "4": 단어.addWord();
+        case "/word/add": 단어.addWord();
         break;
-        case "5": 단어.listWord();
+        case "/word/list": 단어.listWord();
         break;
-        case "6": 단어.detailWord();
+        case "/word/detail": 단어.detailWord();
         break;
-        case "7": 회원.addMember();
+        case "/member/add": 회원.addMember();
         break;
-        case "8": 회원.listMember();
+        case "/member/list": 회원.listMember();
         break;
-        case "9": 회원.detailMember();
+        case "/member/detail": 회원.detailMember();
         break;
 
         default:

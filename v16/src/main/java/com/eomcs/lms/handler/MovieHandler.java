@@ -6,20 +6,20 @@ import com.eomcs.lms.domain.Movie;
 public class MovieHandler {
 
   MovieList movieList;
-
-  public Scanner input;
+  Scanner input;
 
 
   public MovieHandler(Scanner input) {
     this.input = input;
-    this.movieList = new MovieList();
+    movieList = new MovieList();
   }
 
   public MovieHandler(Scanner input, int capacity) {
     this.input = input;
-    this.movieList = new MovieList(capacity);
+    movieList = new MovieList(capacity);
   }
 
+  
   public void addMovie() {
     //  (레퍼런스)
     Movie movie = new Movie();

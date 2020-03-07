@@ -6,18 +6,19 @@ import com.eomcs.lms.domain.Member;
 
 public class MemberHandler {
 
-  MemberList memberList;
+  ArrayList memberList;
+
   Scanner input;
 
 
   public MemberHandler(Scanner input) {
     this.input = input;
-    memberList = new MemberList();
+    memberList = new ArrayList();
   }
 
   public MemberHandler(Scanner input, int capacity) {
     this.input = input;
-    memberList = new MemberList(capacity);
+    memberList = new ArrayList(capacity);
   }
 
 
@@ -46,15 +47,14 @@ public class MemberHandler {
 
     member.setRegisteredDate(new Date(System.currentTimeMillis()));
 
-    // 회원 정보를 담고 있는 인스턴스의 주소를 나중에 사용할 수 있도록
-    // 레퍼런스 배열에 보관
     memberList.add(member);
     System.out.println("저장하였습니다.");
   }
 
   public void listMember() {
-    Member[] members = memberList.toArray();
-    for (Member m : members) {
+    Object[] arr = this.memberList.toArray();
+    for (Object obj : arr) {
+      Member m = (Member) obj; //형변환 하기 위해 넣은 내용...
       System.out.printf("%d. %s / %s / %s / %s\n",
           m.getNo(), m.getName(), m.getEmail(), m.getTel(),
           m.getRegisteredDate());
@@ -66,7 +66,7 @@ public class MemberHandler {
     int no = input.nextInt();
     input.nextLine(); // 숫자 뒤에 남은 공백 제거
 
-    Member member = memberList.get(no);
+    Member member = (Member) this.memberList.get(no); // 회원 인덱스번호 말고 회원 번호로 출력할 수 있도록 바꾸는 것
 
     if (member == null) {
       System.out.println("회원 번호가 유효하지 않습니다.");

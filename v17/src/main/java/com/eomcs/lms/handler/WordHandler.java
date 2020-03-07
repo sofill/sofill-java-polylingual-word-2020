@@ -5,22 +5,21 @@ import com.eomcs.lms.domain.Word;
 
 public class WordHandler {
 
-  WordList wordList;
-  Scanner input;
+  ArrayList wordList;
+  Scanner input; // 이제는 public일 필요가 없다. 생성자에서만 사용.
 
   public WordHandler(Scanner input) {
     this.input = input; //초기화
-    wordList = new WordList();
+    wordList = new ArrayList();
   }
 
   public WordHandler(Scanner input, int capacity) {
     this.input = input;
-    wordList = new WordList(capacity);
+    wordList = new ArrayList(capacity);
   }
 
 
   public void addWord() {
-    // 레퍼런스
     Word word = new Word();
 
     System.out.print("번호? ");
@@ -44,22 +43,23 @@ public class WordHandler {
     System.out.println("저장하였습니다.");
   }
 
-
   public void listWord() {
-    Word[] words = wordList.toArray();
-    for (Word w : words) {
+    Object[] arr = this.wordList.toArray();
+    for (Object obj : arr) {
+      Word w = (Word) obj; //형변환 하기 위해 넣은 내용...
       System.out.printf("%d. %s, %s, %s, %s\n",
-          w.getNo(), w.getTitle(), w.getLanguage(),
-          w.getWord(), w.getMeaning());
+          w.getNo(), w.getTitle(), w.getLanguage(), w.getWord(), w.getMeaning());
     }
   }
+
 
   public void detailWord() {
     System.out.print("단어 번호?");
     int no = input.nextInt();
     input.nextLine(); // 숫자 뒤에 남은 공백 제거
 
-    Word word = this.wordList.get(no);  // 단어 인덱스번호 말고 단어 번호로 출력할 수 있도록 바꾸는 것
+    Word word = (Word) this.wordList.get(no);
+    // 단어 인덱스번호 말고 단어 번호로 출력할 수 있도록 바꾸는 것
 
     if (word == null) {
       System.out.println("단어 번호가 유효하지 않습니다.");

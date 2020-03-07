@@ -5,21 +5,21 @@ import com.eomcs.lms.domain.Movie;
 
 public class MovieHandler {
 
-  MovieList movieList;
+  ArrayList movieList;
+
   Scanner input;
 
 
   public MovieHandler(Scanner input) {
     this.input = input;
-    movieList = new MovieList();
+    movieList = new ArrayList();
   }
 
   public MovieHandler(Scanner input, int capacity) {
     this.input = input;
-    movieList = new MovieList(capacity);
+    movieList = new ArrayList(capacity);
   }
 
-  
   public void addMovie() {
     //  (레퍼런스)
     Movie movie = new Movie();
@@ -50,8 +50,9 @@ public class MovieHandler {
 
 
   public void listMovie() {
-    Movie[] movies = movieList.toArray();
-    for (Movie m : movies) {
+    Object[] arr = this.movieList.toArray();
+    for (Object obj : arr) {
+      Movie m = (Movie) obj; //형변환 하기 위해 넣은 내용..
       System.out.printf("%d. %s, %s, %s, %s\n",
           m.getNo(), m.getTitle(), m.getGenre(),
           m.getStar(), m.getMyRating());
@@ -64,7 +65,7 @@ public class MovieHandler {
     int no = input.nextInt();
     input.nextLine(); // 숫자 뒤에 남은 공백 제거
 
-    Movie movie = this.movieList.get(no);  // 게시물 인덱스번호 말고 게시물 번호로 출력할 수 있도록 바꾸는 것
+    Movie movie = (Movie) this.movieList.get(no);  // 게시물 인덱스로 출력할 수 있도록 바꾸는 것
 
     if (movie == null) {
       System.out.println("영화 번호가 유효하지 않습니다.");

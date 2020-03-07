@@ -6,22 +6,21 @@ import com.eomcs.lms.domain.Member;
 
 public class MemberHandler {
 
-  // 인스턴스 필드 = 논스태틱 필드
-  Member[] members;
-  int memberCount = 0;
+  MemberList memberList;
+  Scanner input;
 
-  // 클래스 필드 = 스태틱 필드
-  static final int MEMBER_SIZE = 1000;
-  Scanner input; // 이제는 public일 필요가 없다. 생성자에서만 사용.
 
   public MemberHandler(Scanner input) {
     this.input = input;
-    this.members = new Member[MEMBER_SIZE];
+    memberList = new MemberList();
   }
 
-  // 인스턴스 메서드
-  // => 호출할 때는 반드시 인스턴스 주소를 줘야 한다.
-  //      인스턴스주소.메서드명();
+  public MemberHandler(Scanner input, int capacity) {
+    this.input = input;
+    memberList = new MemberList(capacity);
+  }
+
+
   public void addMember() {
     // 레퍼런스
     Member member = new Member();
@@ -47,14 +46,15 @@ public class MemberHandler {
 
     member.setRegisteredDate(new Date(System.currentTimeMillis()));
 
-    this.members[this.memberCount++] = member; //여기를 변경
+    // 회원 정보를 담고 있는 인스턴스의 주소를 나중에 사용할 수 있도록
+    // 레퍼런스 배열에 보관
+    memberList.add(member);
     System.out.println("저장하였습니다.");
-
   }
 
   public void listMember() {
-    for (int i = 0; i < this.memberCount; i++) {
-      Member m = this.members[i];
+    Member[] members = memberList.toArray();
+    for (Member m : members) {
       System.out.printf("%d. %s / %s / %s / %s\n",
           m.getNo(), m.getName(), m.getEmail(), m.getTel(),
           m.getRegisteredDate());
@@ -66,13 +66,7 @@ public class MemberHandler {
     int no = input.nextInt();
     input.nextLine(); // 숫자 뒤에 남은 공백 제거
 
-    Member member = null; // 회원 인덱스번호 말고 회원 번호로 출력할 수 있도록 바꾸는 것
-    for (int i = 0; i < this.memberCount; i++) {
-      if (this.members[i].getNo() == no) {
-        member = this.members[i];
-        break;
-      }
-    }
+    Member member = memberList.get(no);
 
     if (member == null) {
       System.out.println("회원 번호가 유효하지 않습니다.");
